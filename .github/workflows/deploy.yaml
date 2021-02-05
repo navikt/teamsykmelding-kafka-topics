@@ -17,6 +17,7 @@ jobs:
         uses: nais/deploy/actions/deploy@v1
         env:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+          CLUSTER: dev-gcp
           VAR: kafka-pool=nav-dev
           RESOURCE: ${{ env.TOPIC_FILES }}
   deploy-to-prod:
@@ -29,5 +30,6 @@ jobs:
         uses: nais/deploy/actions/deploy@v1
         env:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+          CLUSTER: prod-gcp
           VAR: kafka-pool=nav-prod
           RESOURCE: ${{ env.TOPIC_FILES }}
