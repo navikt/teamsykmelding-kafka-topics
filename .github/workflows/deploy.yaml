@@ -1,0 +1,33 @@
+name: Deploy to dev and prod
+on:
+  push:
+    branches:
+      - main
+env:
+  TOPIC_FILES: nais/topics/syfo-nl-request.yaml,nais/topics/syfo-nl-response.yaml
+
+jobs:
+  deploy-to-dev:
+    name: Deploy to dev-gcp
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Deploy topics to dev
+        uses: nais/deploy/actions/deploy@v1
+        env:
+          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+          VAR: kafka-pool=nav-dev
+          RESOURCE: ${{ env.TOPIC_FILES }}
+  deploy-to-prod:
+    name: Deploy to dev-gcp
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Deploy topics to prod
+        uses: nais/deploy/actions/deploy@v1
+        env:
+          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+          VAR: kafka-pool=nav-prod
+          RESOURCE: ${{ env.TOPIC_FILES }}
