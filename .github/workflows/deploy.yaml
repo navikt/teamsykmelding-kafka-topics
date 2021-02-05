@@ -4,7 +4,7 @@ on:
     branches:
       - main
 env:
-  TOPIC_FILES: nais/topics/syfo-nl-request.yaml,nais/topics/syfo-nl-response.yaml
+  TOPIC_FILES: topics/syfo-nl-request.yaml,topics/syfo-nl-response.yaml
 
 jobs:
   deploy-to-dev:
