@@ -21,3 +21,6 @@ spec:
     - team: teamsykmelding
       application: syfonlaltinn
       access: write
+    - team: teamsykefravr
+      application: syfoservicestrangler
+      access: read
