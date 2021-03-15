@@ -4,11 +4,11 @@ on:
     branches:
       - main
 env:
-  TOPIC_FILES: topics/syfo-nl-request.yaml,topics/syfo-nl-response.yaml
+  TOPIC_FILES: topics/syfo-nl-request.yaml,topics/syfo-nl-response.yaml,topics/syfo-nl-invalid.yaml
 
 jobs:
   deploy-to-dev:
-    name: Deploy to dev-gcp
+    name: Deploy to dev-gcp and prod-gcp
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
