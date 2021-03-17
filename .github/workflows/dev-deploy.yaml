@@ -5,7 +5,7 @@ on:
       - '*'
       - '!main'
 env:
-  TOPIC_FILES: topics/syfo-nl-request.yaml,topics/syfo-nl-response.yaml
+  TOPIC_FILES: topics/syfo-nl-request.yaml,topics/syfo-nl-response.yaml,topics/syfo-nl-invalid.yaml
 
 jobs:
   deploy-to-dev:
