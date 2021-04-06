@@ -24,3 +24,6 @@ spec:
     - team: default
       application: syfoservicestrangler
       access: read
+    - team: teamsykmelding
+      application: narmesteleder
+      access: read
