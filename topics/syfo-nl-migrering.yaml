@@ -1,7 +1,7 @@
 apiVersion: kafka.nais.io/v1
 kind: Topic
 metadata:
-  name: syfo-nl-response
+  name: syfo-nl-migrering
   namespace: teamsykmelding
   labels:
     team: teamsykmelding
@@ -10,23 +10,11 @@ spec:
   config:  # optional; all fields are optional too; defaults shown
     cleanupPolicy: delete  # delete, compact
     minimumInSyncReplicas: 3
-    partitions: 3
+    partitions: 1
     replication: 3  # see min/max requirements
     retentionBytes: -1  # -1 means unlimited
     retentionHours: -1  # -1 means unlimited
   acl:
     - team: teamsykmelding
-      application: syfosmaltinn
-      access: read   # read, write, readwrite
-    - team: teamsykmelding
-      application: syfonlaltinn
-      access: write
-    - team: default
-      application: syfoservicestrangler
-      access: read
-    - team: teamsykmelding
-      application: narmesteleder
-      access: read
-    - team: teamsykmelding
       application: syfoservice-data-syfosmregister
-      access: write
+      access: readwrite # read, write, readwrite
