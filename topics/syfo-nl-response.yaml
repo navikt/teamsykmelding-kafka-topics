@@ -17,7 +17,7 @@ spec:
   acl:
     - team: teamsykmelding
       application: syfosmaltinn
-      access: read   # read, write, readwrite
+      access: readwrite   # read, write, readwrite
     - team: teamsykmelding
       application: syfonlaltinn
       access: write
