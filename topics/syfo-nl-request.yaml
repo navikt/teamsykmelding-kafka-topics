@@ -21,3 +21,6 @@ spec:
     - team: teamsykmelding
       application: syfonlaltinn
       access: read
+    - team: teamsykmelding
+      application: narmesteleder
+      access: write
