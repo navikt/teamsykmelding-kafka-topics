@@ -4,7 +4,7 @@ on:
     branches:
       - main
 env:
-  TOPIC_FILES: topics/syfo-nl-request.yaml,topics/syfo-nl-response.yaml,topics/syfo-nl-invalid.yaml,topics/syfo-nl-migrering.yaml
+  TOPIC_FILES: topics/syfo-nl-request.yaml,topics/syfo-nl-response.yaml,topics/syfo-nl-invalid.yaml,topics/syfo-nl-migrering.yaml,topics/syfo-narmesteleder.yaml
 
 jobs:
   deploy-to-dev:
