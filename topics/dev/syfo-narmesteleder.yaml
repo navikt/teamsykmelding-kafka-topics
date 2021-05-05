@@ -1,7 +1,7 @@
 apiVersion: kafka.nais.io/v1
 kind: Topic
 metadata:
-  name: syfo-nl-response
+  name: syfo-narmesteleder
   namespace: teamsykmelding
   labels:
     team: teamsykmelding
@@ -30,3 +30,7 @@ spec:
     - team: teamsykmelding
       application: syfoservice-data-syfosmregister
       access: write
+    - team: default
+      application: syfomock
+      access: write
+
