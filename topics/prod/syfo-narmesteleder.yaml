@@ -1,7 +1,7 @@
 apiVersion: kafka.nais.io/v1
 kind: Topic
 metadata:
-  name: syfo-nl-request
+  name: syfo-narmesteleder
   namespace: teamsykmelding
   labels:
     team: teamsykmelding
@@ -17,10 +17,16 @@ spec:
   acl:
     - team: teamsykmelding
       application: syfosmaltinn
-      access: write   # read, write, readwrite
+      access: readwrite   # read, write, readwrite
     - team: teamsykmelding
       application: syfonlaltinn
+      access: write
+    - team: default
+      application: syfoservicestrangler
       access: read
     - team: teamsykmelding
       application: narmesteleder
+      access: readwrite
+    - team: teamsykmelding
+      application: syfoservice-data-syfosmregister
       access: write

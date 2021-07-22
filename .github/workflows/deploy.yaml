@@ -4,11 +4,11 @@ on:
     branches:
       - main
 env:
-  TOPIC_FILES: topics/syfo-nl-request.yaml,topics/syfo-nl-response.yaml,topics/syfo-nl-invalid.yaml,topics/syfo-nl-migrering.yaml
-
+  TOPIC_FILES: topics/syfo-nl-request.yaml,topics/syfo-nl-invalid.yaml,topics/syfo-nl-migrering.yaml,topics/prod/syfo-narmesteleder.yaml
+  TOPIC_DEV_FILES: topics/syfo-nl-request.yaml,topics/syfo-nl-invalid.yaml,topics/syfo-nl-migrering.yaml,topics/dev/syfo-narmesteleder.yaml
 jobs:
   deploy-to-dev:
-    name: Deploy to dev-gcp and prod-gcp
+    name: Deploy to dev-gcp
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -19,9 +19,9 @@ jobs:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: dev-gcp
           VAR: kafka-pool=nav-dev
-          RESOURCE: ${{ env.TOPIC_FILES }}
+          RESOURCE: ${{ env.TOPIC_DEV_FILES }}
   deploy-to-prod:
-    name: Deploy to dev-gcp
+    name: Deploy to prod-gcp
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
