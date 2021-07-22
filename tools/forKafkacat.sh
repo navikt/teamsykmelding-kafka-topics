@@ -5,7 +5,7 @@ configFile=~/.config/kafkacat.conf
 if [ ! -z "$3" ]
     then
         configFile=~/.config/$3
-fi
+fi      
 
 echo $configFile
 
@@ -33,6 +33,11 @@ elif [[ $kafkaCluster == *"fss" ]]; then
     fi
         username=$(kubectl exec $pod -- sh -c 'cat /secrets/serviceuser/username')
         password=$(kubectl exec $pod -- sh -c 'cat /secrets/serviceuser/password')
+        if [ -z "$username" ]
+        then
+            username=$(kubectl exec $pod -- sh -c 'echo $SERVICEUSER_USERNAME')
+            password=$(kubectl exec $pod -- sh -c 'echo $SERVICEUSER_PASSWORD')
+        fi
         echo "security.protocol=SASL_SSL" >> $configFile
         echo "sasl.mechanism=PLAIN" >> $configFile
         echo "sasl.username=$username" >> $configFile
