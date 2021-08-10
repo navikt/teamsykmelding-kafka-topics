@@ -1,0 +1,22 @@
+apiVersion: kafka.nais.io/v1
+kind: Topic
+metadata:
+  name: syfo-nl-id
+  namespace: teamsykmelding
+  labels:
+    team: teamsykmelding
+  annotations:
+    kafka.nais.io/removeDataWhenResourceIsDeleted: "true"
+spec:
+  pool: {{kafka-pool}}
+  config:  # optional; all fields are optional too; defaults shown
+    cleanupPolicy: delete  # delete, compact
+    minimumInSyncReplicas: 3
+    partitions: 3
+    replication: 3  # see min/max requirements
+    retentionBytes: -1  # -1 means unlimited
+    retentionHours: -1  # -1 means unlimited
+  acl:
+    - team: teamsykmelding
+      application: narmesteleder
+      access: readwrite # read, write, readwrite
