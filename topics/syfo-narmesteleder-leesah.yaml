@@ -17,4 +17,4 @@ spec:
   acl:
     - team: teamsykmelding
       application: narmesteleder
-      access: write
+      access: readwrite
