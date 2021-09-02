@@ -21,3 +21,7 @@ spec:
     - team: teamsykmelding
       application: narmesteleder-varsel
       access: read
+    - team: flex
+      application: sykepengesoknad-narmesteleder-varsler
+      access: read
+
