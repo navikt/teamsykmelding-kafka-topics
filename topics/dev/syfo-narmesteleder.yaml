@@ -33,4 +33,6 @@ spec:
     - team: default
       application: syfomock
       access: write
-
+    - team: teamsykmelding
+      application: narmesteleder-arbeidsforhold
+      access: write
