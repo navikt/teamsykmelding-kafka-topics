@@ -27,4 +27,7 @@ spec:
     - team: teamsykmelding
       application: narmesteleder-arbeidsforhold
       access: read
+    - team: teamsykefravr
+      application: isnarmesteleder
+      access: read
 
