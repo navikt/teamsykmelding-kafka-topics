@@ -5,7 +5,7 @@ on:
       - '*'
       - '!main'
 env:
-  TOPIC_FILES: topics/syfo-nl-request.yaml,topics/syfo-nl-invalid.yaml,topics/dev/syfo-narmesteleder.yaml,topics/syfo-narmesteleder-leesah.yaml
+  TOPIC_FILES: topics/syfo-nl-request.yaml,topics/syfo-nl-invalid.yaml,topics/dev/syfo-narmesteleder.yaml,topics/syfo-narmesteleder-leesah.yaml,topics/syfo-sendt-sykmelding-v2.yaml,topics/syfo-bekreftet-sykmelding-v2.yaml,topics/syfo-mottatt-sykmelding-v2.yaml
 
 jobs:
   deploy-to-dev:
