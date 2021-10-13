@@ -5,7 +5,7 @@ configFile=~/.config/kafkacat.conf
 if [ ! -z "$3" ]
     then
         configFile=~/.config/$3
-fi      
+fi
 
 echo $configFile
 
@@ -25,6 +25,7 @@ if [[ $kafkaCluster == *"gcp" ]]; then
     echo "ssl.key.location=$cp/kafka.key" >> $configFile
     echo "ssl.certificate.location=$cp/kafka.crt" >> $configFile
     echo "ssl.ca.location=$cp/ca.crt" >> $configFile
+    echo "enable.ssl.certificate.verification=false" >> $configFile
 elif [[ $kafkaCluster == *"fss" ]]; then
     if [[ $context == "prod"* ]]; then
         echo "bootstrap.servers=a01apvl00145.adeo.no:8443,a01apvl00146.adeo.no:8443,a01apvl00147.adeo.no:8443,a01apvl00148.adeo.no:8443,a01apvl00149.adeo.no:8443,a01apvl00150.adeo.no:8443" >> $configFile
