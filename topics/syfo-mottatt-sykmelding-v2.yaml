@@ -1,14 +1,14 @@
 apiVersion: kafka.nais.io/v1
 kind: Topic
 metadata:
-  name: syfo-narmesteleder-leesah
+  name: syfo-mottatt-sykmelding-v2
   namespace: teamsykmelding
   labels:
     team: teamsykmelding
 spec:
   pool: {{kafka-pool}}
   config:  # optional; all fields are optional too; defaults shown
-    cleanupPolicy: delete  # delete, compact
+    cleanupPolicy: compact  # delete, compact
     minimumInSyncReplicas: 3
     partitions: 3
     replication: 3  # see min/max requirements
@@ -16,21 +16,14 @@ spec:
     retentionHours: -1  # -1 means unlimited
   acl:
     - team: teamsykmelding
-      application: narmesteleder
+      application: syfosmregister
+      access: write
+    - team: flex
+      application: syfosoknad
+      access: read
+    - team: flex
+      application: syfosyketilfelle
+      access: read
+    - team: teamsykmelding
+      application: syfoservice-data-syfosmregister
       access: readwrite
-    - team: teamsykmelding
-      application: narmesteleder-varsel
-      access: read
-    - team: flex
-      application: sykepengesoknad-narmesteleder-varsler
-      access: read
-    - team: flex
-      application: sykepengesoknad-ikke-sendt-altinnvarsel
-      access: read
-    - team: teamsykmelding
-      application: narmesteleder-arbeidsforhold
-      access: read
-    - team: teamsykefravr
-      application: isnarmesteleder
-      access: read
-
