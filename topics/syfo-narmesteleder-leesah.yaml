@@ -33,4 +33,6 @@ spec:
     - team: teamsykefravr
       application: isnarmesteleder
       access: read
-
+    - team: teamsykmelding
+      application: dinesykmeldte-backend
+      access: read
