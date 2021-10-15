@@ -4,8 +4,8 @@ on:
     branches:
       - main
 env:
-  TOPIC_FILES: topics/syfo-nl-request.yaml,topics/syfo-nl-invalid.yaml,topics/prod/syfo-narmesteleder.yaml,topics/syfo-narmesteleder-leesah.yaml,topics/syfo-sendt-sykmelding-v2.yaml,topics/syfo-bekreftet-sykmelding-v2.yaml,topics/syfo-mottatt-sykmelding-v2.yaml
-  TOPIC_DEV_FILES: topics/syfo-nl-request.yaml,topics/syfo-nl-invalid.yaml,topics/dev/syfo-narmesteleder.yaml,topics/syfo-narmesteleder-leesah.yaml,topics/syfo-sendt-sykmelding-v2.yaml,topics/syfo-bekreftet-sykmelding-v2.yaml,topics/syfo-mottatt-sykmelding-v2.yaml
+  TOPIC_FILES: topics/syfo-nl-request.yaml,topics/syfo-nl-invalid.yaml,topics/prod/syfo-narmesteleder.yaml,topics/syfo-narmesteleder-leesah.yaml,topics/syfo-sendt-sykmelding.yaml,topics/syfo-bekreftet-sykmelding.yaml,topics/syfo-mottatt-sykmelding.yaml
+  TOPIC_DEV_FILES: topics/syfo-nl-request.yaml,topics/syfo-nl-invalid.yaml,topics/dev/syfo-narmesteleder.yaml,topics/syfo-narmesteleder-leesah.yaml,topics/syfo-sendt-sykmelding.yaml,topics/syfo-bekreftet-sykmelding.yaml,topics/syfo-mottatt-sykmelding.yaml
 jobs:
   deploy-to-dev:
     name: Deploy to dev-gcp

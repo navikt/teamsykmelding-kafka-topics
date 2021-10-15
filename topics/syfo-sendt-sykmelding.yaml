@@ -1,7 +1,7 @@
 apiVersion: kafka.nais.io/v1
 kind: Topic
 metadata:
-  name: syfo-bekreftet-sykmelding-v2
+  name: syfo-sendt-sykmelding
   namespace: teamsykmelding
   labels:
     team: teamsykmelding
@@ -18,11 +18,23 @@ spec:
     - team: teamsykmelding
       application: syfosmregister
       access: write
+    - team: teamsykmelding
+      application: syfosmaltinn
+      access: read
+    - team: teamsykmelding
+      application: narmesteleder-varsel
+      access: read
+    - team: teamsykmelding
+      application: sykmeldinger-arbeidsgiver
+      access: read
     - team: flex
       application: syfosoknad
       access: read
     - team: flex
       application: syfosyketilfelle
+      access: read
+    - team: teamsykmelding
+      application: dinesykmeldte-backend
       access: read
     - team: teamsykmelding
       application: syfoservice-data-syfosmregister
