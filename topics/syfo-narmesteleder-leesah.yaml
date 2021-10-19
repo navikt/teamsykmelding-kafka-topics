@@ -36,3 +36,6 @@ spec:
     - team: teamsykmelding
       application: dinesykmeldte-backend
       access: read
+    - team: teamsykmelding
+      application: sykmeldinger-arbeidsgiver
+      access: read
