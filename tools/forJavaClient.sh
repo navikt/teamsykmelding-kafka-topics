@@ -34,11 +34,15 @@ elif [[ $kafkaCluster == *"fss" ]]; then
     elif [[ $context == "dev"* ]]; then
         echo "bootstrap.servers=b27apvl00045.preprod.local:8443,b27apvl00046.preprod.local:8443,b27apvl00047.preprod.local:8443" >> $configFile
     fi
+        kubectl cp $pod:$(kubectl exec $pod -- sh -c 'readlink -f $NAV_TRUSTSTORE_PATH') $cp/nav.truststore.jks
         username=$(kubectl exec $pod -- sh -c 'cat /secrets/serviceuser/username')
         password=$(kubectl exec $pod -- sh -c 'cat /secrets/serviceuser/password')
+        truststorePassword=$(kubectl exec $pod -- sh -c 'echo $NAV_TRUSTSTORE_PASSWORD')
+        echo "ssl.truststore.location=$cp/nav.truststore.jks" >> $configFile
+        echo "ssl.truststore.password=$truststorePassword" >> $configFile
+        echo "sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$username" password="$password";" >> $configFile
         echo "security.protocol=SASL_SSL" >> $configFile
         echo "sasl.mechanism=PLAIN" >> $configFile
-        echo "sasl.username=$username" >> $configFile
-        echo "sasl.password=$password" >> $configFile
-        echo "enable.ssl.certificate.verification=false" >> $configFile
+        echo "session.timeout.ms=30000" >> $configFile
+        echo "request.timeout.ms=40000" >> $configFile
 fi
