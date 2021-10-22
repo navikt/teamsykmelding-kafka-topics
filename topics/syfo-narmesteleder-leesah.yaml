@@ -39,3 +39,6 @@ spec:
     - team: teamsykmelding
       application: sykmeldinger-arbeidsgiver
       access: read
+    - team: fager
+      application: notifikasjon-bruker-api
+      access: read
