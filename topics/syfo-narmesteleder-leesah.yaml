@@ -42,3 +42,6 @@ spec:
     - team: fager
       application: notifikasjon-bruker-api
       access: read
+    - team: teamsykmelding
+      application: syfosmaltinn
+      access: read
