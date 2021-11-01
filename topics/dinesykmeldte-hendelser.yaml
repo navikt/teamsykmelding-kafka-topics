@@ -1,0 +1,26 @@
+apiVersion: kafka.nais.io/v1
+kind: Topic
+metadata:
+  name: dinesykmeldte-hendelser
+  namespace: teamsykmelding
+  labels:
+    team: teamsykmelding
+spec:
+  pool: {{kafka-pool}}
+  config:  # optional; all fields are optional too; defaults shown
+    cleanupPolicy: compact  # delete, compact
+    minimumInSyncReplicas: 3
+    partitions: 3
+    replication: 3  # see min/max requirements
+    retentionBytes: -1  # -1 means unlimited
+    retentionHours: 2952  # 4 months
+  acl:
+    - team: default
+      application: syfoservicestrangler
+      access: write
+    - team: teamsykmelding
+      application: dinesykmeldte-backend
+      access: readwrite
+    - team: teamsykmelding
+      application: syfoservice-data-syfosmregister
+      access: write
