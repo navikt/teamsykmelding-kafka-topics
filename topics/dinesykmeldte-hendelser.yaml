@@ -13,7 +13,7 @@ spec:
     partitions: 3
     replication: 3  # see min/max requirements
     retentionBytes: -1  # -1 means unlimited
-    retentionHours: 2920  # 4 months
+    retentionHours: 2952  # 4 months
   acl:
     - team: default
       application: syfoservicestrangler
