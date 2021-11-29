@@ -1,5 +1,9 @@
 #!/bin/bash
-pod=$1
+container=$1
+if [ -z "$container" ]; then echo "Container must not be null" && exit 0; fi
+pod=$(kubectl get pods | egrep -m 1 "($container-[0-9a-z]{10}-[0-9a-z]{5})" -o)
+if [ -z "$pod" ]; then echo "did not find any pod for container $container" && exit 0; fi
+echo $pod
 kafkaCluster=$2
 configFile=~/.config/kafkacat.conf
 if [ ! -z "$3" ]
@@ -10,17 +14,17 @@ fi
 echo $configFile
 
 context=$(kubectl config current-context)
-appname=$(kubectl exec $pod -- sh -c 'echo $NAIS_APP_NAME')
+appname=$(kubectl exec $pod -c $container -- sh -c 'echo $NAIS_APP_NAME')
 cp=~/.config/kafka/$context/$appname
 
 [ -d $cp ] || mkdir -p $cp
 [ -d ~/.config ] || mkdir ~/.config
 rm -f $configFile
 if [[ $kafkaCluster == *"gcp" ]]; then
-    kubectl cp $pod:$(kubectl exec $pod -- sh -c 'readlink -f $KAFKA_PRIVATE_KEY_PATH') $cp/kafka.key
-    kubectl cp $pod:$(kubectl exec $pod -- sh -c 'readlink -f $KAFKA_CA_PATH') $cp/ca.crt
-    kubectl cp $pod:$(kubectl exec $pod -- sh -c 'readlink -f $KAFKA_CERTIFICATE_PATH') $cp/kafka.crt
-    echo "bootstrap.servers="$(kubectl exec $pod -- sh -c 'echo $KAFKA_BROKERS') >> $configFile
+    kubectl cp $pod:$(kubectl exec $pod -c $container -- sh -c 'readlink -f $KAFKA_PRIVATE_KEY_PATH') -c $container $cp/kafka.key
+    kubectl cp $pod:$(kubectl exec $pod -c $container -- sh -c 'readlink -f $KAFKA_CA_PATH') -c $container $cp/ca.crt
+    kubectl cp $pod:$(kubectl exec $pod -c $container -- sh -c 'readlink -f $KAFKA_CERTIFICATE_PATH') -c $container $cp/kafka.crt
+    echo "bootstrap.servers="$(kubectl exec $pod -c $container -- sh -c 'echo $KAFKA_BROKERS') >> $configFile
     echo "security.protocol=ssl" >> $configFile
     echo "ssl.key.location=$cp/kafka.key" >> $configFile
     echo "ssl.certificate.location=$cp/kafka.crt" >> $configFile
@@ -32,12 +36,12 @@ elif [[ $kafkaCluster == *"fss" ]]; then
     elif [[ $context == "dev"* ]]; then
         echo "bootstrap.servers=b27apvl00045.preprod.local:8443,b27apvl00046.preprod.local:8443,b27apvl00047.preprod.local:8443" >> $configFile
     fi
-        username=$(kubectl exec $pod -- sh -c 'cat /secrets/serviceuser/username')
-        password=$(kubectl exec $pod -- sh -c 'cat /secrets/serviceuser/password')
+        username=$(kubectl exec $pod -c $container -- sh -c 'cat /secrets/serviceuser/username')
+        password=$(kubectl exec $pod -c $container -- sh -c 'cat /secrets/serviceuser/password')
         if [ -z "$username" ]
         then
-            username=$(kubectl exec $pod -- sh -c 'echo $SERVICEUSER_USERNAME')
-            password=$(kubectl exec $pod -- sh -c 'echo $SERVICEUSER_PASSWORD')
+            username=$(kubectl exec $pod -c $container -- sh -c 'echo $SERVICEUSER_USERNAME')
+            password=$(kubectl exec $pod -c $container -- sh -c 'echo $SERVICEUSER_PASSWORD')
         fi
         echo "security.protocol=SASL_SSL" >> $configFile
         echo "sasl.mechanism=PLAIN" >> $configFile

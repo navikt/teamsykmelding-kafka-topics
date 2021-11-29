@@ -1,7 +1,11 @@
 #!/bin/bash
-pod=$1
+container=$1
+if [ -z "$container" ]; then echo "Container must not be null" && exit 0; fi
+pod=$(kubectl get pods | egrep -m 1 "($container-[0-9a-z]{10}-[0-9a-z]{5})" -o)
+if [ -z "$pod" ]; then echo "did not find any pod for container $container" && exit 0; fi
+echo $pod
 kafkaCluster=$2
-configFile=~/.config/kafkaJava.conf
+configFile=~/.config/kafkacat.conf
 if [ ! -z "$3" ]
     then
         configFile=~/.config/$3
@@ -10,17 +14,17 @@ fi
 echo $configFile
 
 context=$(kubectl config current-context)
-appname=$(kubectl exec $pod -- sh -c 'echo $NAIS_APP_NAME')
+appname=$(kubectl exec $pod -c $container -- sh -c 'echo $NAIS_APP_NAME')
 cp=~/.config/kafka/$context/syfonlaltinn
 
 [ -d $cp ] || mkdir -p $cp
 [ -d ~/.config ] || mkdir ~/.config
 rm -f $configFile
 if [[ $kafkaCluster == *"gcp" ]]; then
-    kubectl cp $pod:$(kubectl exec $pod -- sh -c 'readlink -f $KAFKA_TRUSTSTORE_PATH') $cp/kafka.client.truststore.jks
-    kubectl cp $pod:$(kubectl exec $pod -- sh -c 'readlink -f $KAFKA_KEYSTORE_PATH') $cp/kafka.client.keystore.jks
-    truststorePassword=$(kubectl exec $pod -- sh -c 'echo $KAFKA_CREDSTORE_PASSWORD')
-    echo "bootstrap.servers="$(kubectl exec $pod -- sh -c 'echo $KAFKA_BROKERS') >> $configFile
+    kubectl cp $pod:$(kubectl exec $pod -c $container -- sh -c 'readlink -f $KAFKA_TRUSTSTORE_PATH') -c $container  $cp/kafka.client.truststore.jks
+    kubectl cp $pod:$(kubectl exec $pod -c $container -- sh -c 'readlink -f $KAFKA_KEYSTORE_PATH') -c $container  $cp/kafka.client.keystore.jks
+    truststorePassword=$(kubectl exec $pod -c $container -- sh -c 'echo $KAFKA_CREDSTORE_PASSWORD')
+    echo "bootstrap.servers="$(kubectl exec $pod -c $container -- sh -c 'echo $KAFKA_BROKERS') >> $configFile
     echo "security.protocol=ssl" >> $configFile
     echo "ssl.truststore.location=$cp/kafka.client.truststore.jks" >> $configFile
     echo "ssl.keystore.location=$cp/kafka.client.keystore.jks" >> $configFile
@@ -34,10 +38,10 @@ elif [[ $kafkaCluster == *"fss" ]]; then
     elif [[ $context == "dev"* ]]; then
         echo "bootstrap.servers=b27apvl00045.preprod.local:8443,b27apvl00046.preprod.local:8443,b27apvl00047.preprod.local:8443" >> $configFile
     fi
-        kubectl cp $pod:$(kubectl exec $pod -- sh -c 'readlink -f $NAV_TRUSTSTORE_PATH') $cp/nav.truststore.jks
-        username=$(kubectl exec $pod -- sh -c 'cat /secrets/serviceuser/username')
-        password=$(kubectl exec $pod -- sh -c 'cat /secrets/serviceuser/password')
-        truststorePassword=$(kubectl exec $pod -- sh -c 'echo $NAV_TRUSTSTORE_PASSWORD')
+        kubectl cp $pod:$(kubectl exec $pod -- sh -c 'readlink -f $NAV_TRUSTSTORE_PATH') -c $container $cp/nav.truststore.jks
+        username=$(kubectl exec $pod -c $container -- sh -c 'cat /secrets/serviceuser/username')
+        password=$(kubectl exec $pod -c $container -- sh -c 'cat /secrets/serviceuser/password')
+        truststorePassword=$(kubectl exec $pod -c $container -- sh -c 'echo $NAV_TRUSTSTORE_PASSWORD')
         echo "ssl.truststore.location=$cp/nav.truststore.jks" >> $configFile
         echo "ssl.truststore.password=$truststorePassword" >> $configFile
         echo "sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$username" password="$password";" >> $configFile
