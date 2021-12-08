@@ -1,7 +1,7 @@
 #!/bin/bash
 container=$1
 if [ -z "$container" ]; then echo "Container must not be null" && exit 0; fi
-pod=$(kubectl get pods | egrep -m 1 "($container-[0-9a-z]{10}-[0-9a-z]{5})" -o)
+pod=$(kubectl get pods | egrep -m 1 "($container-[0-9a-z]{5,10}-[0-9a-z]{5})" -o)
 if [ -z "$pod" ]; then echo "did not find any pod for container $container" && exit 0; fi
 echo $pod
 kafkaCluster=$2
