@@ -33,6 +33,9 @@ spec:
     - team: flex
       application: syfosyketilfelle
       access: read
+    - team: flex
+      application: flex-syketilfelle
+      access: read
     - team: teamsykmelding
       application: dinesykmeldte-backend
       access: read
