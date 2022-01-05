@@ -1,0 +1,44 @@
+apiVersion: kafka.nais.io/v1
+kind: Topic
+metadata:
+  name: syfo-manuell-behandling-sykmelding
+  namespace: teamsykmelding
+  labels:
+    team: teamsykmelding
+spec:
+  pool: {{kafka-pool}}
+  config:  # optional; all fields are optional too; defaults shown
+    cleanupPolicy: delete  # delete, compact
+    minimumInSyncReplicas: 3
+    partitions: 3
+    replication: 3  # see min/max requirements
+    retentionBytes: -1  # -1 means unlimited
+    retentionHours: -1  # -1 means unlimited
+  acl:
+    - team: teamsykmelding
+      application: syfosmmottak
+      access: write
+    - team: teamsykmelding
+      application: syfosmregister
+      access: readwrite
+    - team: teamsykmelding
+      application: syfosmvarsel
+      access: read
+    - team: teamsykmelding
+      application: syfosmsak
+      access: read
+    - team: teamsykmelding
+      application: syfosmarena
+      access: read
+    - team: teamsykmelding
+      application: sparenaproxy
+      access: read
+    - team: teamsykefravr
+      application: isprediksjon
+      access: read
+    - team: default
+      application: argus-sykmeldinger
+      access: read
+    - team: disykefravar
+      application: dvh-sykm-konsument
+      access: read
