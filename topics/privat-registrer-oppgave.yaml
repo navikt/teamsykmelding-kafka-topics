@@ -1,7 +1,7 @@
 apiVersion: kafka.nais.io/v1
 kind: Topic
 metadata:
-  name: privat-oppgave-registrerOppgave
+  name: privat-registrer-oppgave
   namespace: teamsykmelding
   labels:
     team: teamsykmelding
