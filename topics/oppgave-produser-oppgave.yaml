@@ -1,0 +1,38 @@
+apiVersion: kafka.nais.io/v1
+kind: Topic
+metadata:
+  name: oppgave-produser-oppgave
+  namespace: teamsykmelding
+  labels:
+    team: teamsykmelding
+spec:
+  pool: {{kafka-pool}}
+  config:  # optional; all fields are optional too; defaults shown
+    cleanupPolicy: delete  # delete, compact
+    minimumInSyncReplicas: 3
+    partitions: 10
+    replication: 3  # see min/max requirements
+    retentionBytes: -1  # -1 means unlimited
+    retentionHours: -1  # -1 means unlimited
+  acl:
+    - team: teamsykmelding
+      application: syfosmmottak
+      access: write
+    - team: teamsykmelding
+      application: syfosmmanuell-backend
+      access: write
+    - team: teamsykmelding
+      application: syfosmpapirmottak
+      access: write
+    - team: teamsykmelding
+      application: smregistrering-backend
+      access: write
+    - team: teamsykmelding
+      application: syfosmsak
+      access: write
+    - team: teamsykmelding
+      application: syfosminfotrygd
+      access: write
+    - team: teamsykmelding
+      application: syfosmoppgave
+      access: read
