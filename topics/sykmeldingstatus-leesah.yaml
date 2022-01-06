@@ -21,9 +21,6 @@ spec:
     - team: teamsykmelding
       application: syfosmregister
       access: readwrite
-    - team: flex
-      application: syfosoknad
-      access: read
     - team: teamsykmelding
       application: syfosmvarsel
       access: read
