@@ -1,7 +1,7 @@
 apiVersion: kafka.nais.io/v1
 kind: Topic
 metadata:
-  name: syfo-vedlegg
+  name: privat-oppgave-retry
   namespace: teamsykmelding
   labels:
     team: teamsykmelding
@@ -16,11 +16,5 @@ spec:
     retentionHours: -1  # -1 means unlimited
   acl:
     - team: teamsykmelding
-      application: syfosmmottak
-      access: write
-    - team: teamsykmelding
-      application: pale-2
-      access: write
-    - team: teamsykmelding
-      application: syfoservice-data-syfosmregister
+      application: syfosmoppgave
       access: readwrite

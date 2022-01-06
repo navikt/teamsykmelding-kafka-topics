@@ -1,0 +1,20 @@
+apiVersion: kafka.nais.io/v1
+kind: Topic
+metadata:
+  name: privat-oppgave-registrerOppgave
+  namespace: teamsykmelding
+  labels:
+    team: teamsykmelding
+spec:
+  pool: {{kafka-pool}}
+  config:  # optional; all fields are optional too; defaults shown
+    cleanupPolicy: delete  # delete, compact
+    minimumInSyncReplicas: 10
+    partitions: 10
+    replication: 10  # see min/max requirements
+    retentionBytes: -1  # -1 means unlimited
+    retentionHours: -1  # -1 means unlimited
+  acl:
+    - team: teamsykmelding
+      application: syfosmoppgave
+      access: readwrite

@@ -1,7 +1,7 @@
 apiVersion: kafka.nais.io/v1
 kind: Topic
 metadata:
-  name: syfo-oppgave-produserOppgave
+  name: sykmelding-behandlingsutfall
   namespace: teamsykmelding
   labels:
     team: teamsykmelding
@@ -9,9 +9,9 @@ spec:
   pool: {{kafka-pool}}
   config:  # optional; all fields are optional too; defaults shown
     cleanupPolicy: delete  # delete, compact
-    minimumInSyncReplicas: 3
-    partitions: 3
-    replication: 3  # see min/max requirements
+    minimumInSyncReplicas: 10
+    partitions: 10
+    replication: 10  # see min/max requirements
     retentionBytes: -1  # -1 means unlimited
     retentionHours: -1  # -1 means unlimited
   acl:
@@ -19,20 +19,17 @@ spec:
       application: syfosmmottak
       access: write
     - team: teamsykmelding
-      application: syfosmmanuell-backend
-      access: write
-    - team: teamsykmelding
-      application: syfosmpapirmottak
-      access: write
-    - team: teamsykmelding
-      application: smregistrering-backend
-      access: write
-    - team: teamsykmelding
-      application: syfosmsak
+      application: syfoservice-data-syfosmregister
       access: write
     - team: teamsykmelding
       application: syfosminfotrygd
       access: write
     - team: teamsykmelding
-      application: syfosmoppgave
+      application: syfosmregister
+      access: readwrite
+    - team: teamsykmelding
+      application: syfosmsak
+      access: read
+    - team: teamsykefravr
+      application: isprediksjon
       access: read

@@ -1,7 +1,7 @@
 apiVersion: kafka.nais.io/v1
 kind: Topic
 metadata:
-  name: syfo-syfoservice-mq
+  name: sykmelding-manuell
   namespace: teamsykmelding
   labels:
     team: teamsykmelding
@@ -16,20 +16,11 @@ spec:
     retentionHours: -1  # -1 means unlimited
   acl:
     - team: teamsykmelding
-      application: syfoservice-mq-producer
-      access: read
-    - team: teamsykmelding
-      application: syfoservice-data-syfosmregister
-      access: write
-    - team: teamsykmelding
-      application: syfosmpapirmottak
-      access: write
-    - team: teamsykmelding
-      application: syfosmpapirmottak
+      application: syfosmmottak
       access: write
     - team: teamsykmelding
       application: syfosmmanuell-backend
-      access: write
+      access: read
     - team: teamsykmelding
-      application: smregistrering-backend
-      access: write
+      application: syfoservice-data-syfosmregister
+      access: readwrite

@@ -1,7 +1,7 @@
 apiVersion: kafka.nais.io/v1
 kind: Topic
 metadata:
-  name: syfo-sykmelding-manuell
+  name: sykmelding-apprec
   namespace: teamsykmelding
   labels:
     team: teamsykmelding
@@ -20,7 +20,7 @@ spec:
       access: write
     - team: teamsykmelding
       application: syfosmmanuell-backend
-      access: read
+      access: write
     - team: teamsykmelding
-      application: syfoservice-data-syfosmregister
-      access: readwrite
+      application: syfosmapprec
+      access: read
