@@ -9,9 +9,9 @@ spec:
   pool: {{kafka-pool}}
   config:  # optional; all fields are optional too; defaults shown
     cleanupPolicy: delete  # delete, compact
-    minimumInSyncReplicas: 10
+    minimumInSyncReplicas: 3
     partitions: 10
-    replication: 10  # see min/max requirements
+    replication: 3  # see min/max requirements
     retentionBytes: -1  # -1 means unlimited
     retentionHours: -1  # -1 means unlimited
   acl:
