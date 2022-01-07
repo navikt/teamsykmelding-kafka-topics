@@ -33,9 +33,6 @@ spec:
     - team: teamsykmelding
       application: sparenaproxy
       access: read
-    - team: default
-      application: argus-sykmeldinger
-      access: read
     - team: disykefravar
       application: dvh-sykm-konsument
       access: read
