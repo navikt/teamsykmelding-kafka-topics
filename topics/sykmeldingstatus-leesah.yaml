@@ -32,6 +32,3 @@ spec:
     - team: default
       application: syfoservicestrangler
       access: read
-    - team: teamsykefravr
-      application: isprediksjon
-      access: read
