@@ -30,6 +30,3 @@ spec:
     - team: teamsykmelding
       application: syfosmsak
       access: read
-    - team: teamsykefravr
-      application: isprediksjon
-      access: read
