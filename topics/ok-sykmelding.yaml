@@ -40,6 +40,9 @@ spec:
       application: syfosmsak
       access: read
     - team: teamsykmelding
+      application: syfosmsak-stream
+      access: read
+    - team: teamsykmelding
       application: syfosminfotrygd
       access: read
     - team: teamsykmelding

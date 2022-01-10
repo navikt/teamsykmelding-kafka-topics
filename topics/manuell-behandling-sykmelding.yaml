@@ -28,6 +28,9 @@ spec:
       application: syfosmsak
       access: read
     - team: teamsykmelding
+      application: syfosmsak-stream
+      access: read
+    - team: teamsykmelding
       application: syfosmarena
       access: read
     - team: teamsykmelding
