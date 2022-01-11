@@ -46,7 +46,7 @@ spec:
       application: syfosminfotrygd
       access: read
     - team: teamsykmelding
-      application: syfosmarena
+      application: syfosmarena-stream
       access: read
     - team: teamsykmelding
       application: sparenaproxy

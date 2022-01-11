@@ -19,7 +19,7 @@ spec:
       application: syfosmsak
       access: write
     - team: teamsykmelding
-      application: syfosmarena
+      application: syfosmarena-stream
       access: read
     - team: teamsykmelding
       application: syfosmoppgave-stream
