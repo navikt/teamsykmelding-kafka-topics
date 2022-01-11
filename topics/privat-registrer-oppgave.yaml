@@ -17,4 +17,7 @@ spec:
   acl:
     - team: teamsykmelding
       application: syfosmoppgave
-      access: readwrite
+      access: read
+    - team: teamsykmelding
+      application: syfosmoppgave-stream
+      access: write

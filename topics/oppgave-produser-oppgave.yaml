@@ -31,5 +31,5 @@ spec:
       application: syfosminfotrygd
       access: write
     - team: teamsykmelding
-      application: syfosmoppgave
+      application: syfosmoppgave-stream
       access: read
