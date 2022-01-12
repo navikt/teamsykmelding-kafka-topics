@@ -1,0 +1,25 @@
+name: Deploy dinesykmeldte-topics to dev
+on:
+  push:
+    branches:
+      - '*'
+      - '!main'
+    paths:
+      - 'topics/dinesykmeldte/**'
+env:
+  TOPIC_FILES: topics/dinesykmeldte/dinesykmeldte-hendelser.yaml
+
+jobs:
+  deploy-to-dev:
+    name: Deploy to dev-gcp
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Deploy topics to dev
+        uses: nais/deploy/actions/deploy@v1
+        env:
+          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+          CLUSTER: dev-gcp
+          VAR: kafka-pool=nav-dev
+          RESOURCE: ${{ env.TOPIC_FILES }}
