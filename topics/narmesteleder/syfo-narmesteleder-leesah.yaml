@@ -48,3 +48,6 @@ spec:
     - team: teamsykmelding
       application: syfosmaltinn
       access: read
+    - team: fager
+      application: min-side-arbeidsgiver-api
+      access: read
