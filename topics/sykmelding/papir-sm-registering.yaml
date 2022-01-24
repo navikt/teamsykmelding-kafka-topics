@@ -21,6 +21,3 @@ spec:
     - team: teamsykmelding
       application: smregistrering-backend
       access: read
-    - team: teamsykmelding
-      application: syfoservice-data-syfosmregister
-      access: readwrite

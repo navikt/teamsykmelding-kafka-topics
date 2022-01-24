@@ -1,7 +1,7 @@
 apiVersion: kafka.nais.io/v1
 kind: Topic
 metadata:
-  name: vedlegg
+  name: sykmelding-historisk
   namespace: teamsykmelding
   labels:
     team: teamsykmelding
@@ -10,17 +10,11 @@ spec:
   config:  # optional; all fields are optional too; defaults shown
     cleanupPolicy: delete  # delete, compact
     minimumInSyncReplicas: 3
-    partitions: 3
+    partitions: 10
     replication: 3  # see min/max requirements
     retentionBytes: -1  # -1 means unlimited
     retentionHours: -1  # -1 means unlimited
   acl:
-    - team: teamsykmelding
-      application: syfosmmottak
-      access: write
-    - team: teamsykmelding
-      application: pale-2
-      access: write
     - team: teamsykmelding
       application: syfoservice-data-syfosmregister
       access: readwrite
