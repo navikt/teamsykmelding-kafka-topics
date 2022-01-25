@@ -1,0 +1,37 @@
+name: Deploy legeerklæring-topics to dev and prod
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'topics/legeerklaering/**'
+      - '.github/workflows/legeerklaering-deploy.yml'
+env:
+  TOPIC_FILES: topics/legeerklaering/legeerklaering.yaml
+jobs:
+  deploy-to-dev:
+    name: Deploy to dev-gcp
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Deploy topics to dev
+        uses: nais/deploy/actions/deploy@v1
+        env:
+          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+          CLUSTER: dev-gcp
+          VAR: kafka-pool=nav-dev
+          RESOURCE: ${{ env.TOPIC_FILES }}
+  deploy-to-prod:
+    name: Deploy to prod-gcp
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Deploy topics to prod
+        uses: nais/deploy/actions/deploy@v1
+        env:
+          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+          CLUSTER: prod-gcp
+          VAR: kafka-pool=nav-prod
+          RESOURCE: ${{ env.TOPIC_FILES }}
