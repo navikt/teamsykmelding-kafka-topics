@@ -17,7 +17,7 @@ spec:
   acl:
     - team: teamsykmelding
       application: sparenaproxy
-      access: write
+      access: read
     - team: teamsykmelding
       application: sparenajob
-      access: read
+      access: write
