@@ -1,0 +1,23 @@
+apiVersion: kafka.nais.io/v1
+kind: Topic
+metadata:
+  name: privat-aktiver-planlagtmelding
+  namespace: teamsykmelding
+  labels:
+    team: teamsykmelding
+spec:
+  pool: {{kafka-pool}}
+  config:  # optional; all fields are optional too; defaults shown
+    cleanupPolicy: delete  # delete, compact
+    minimumInSyncReplicas: 3
+    partitions: 10
+    replication: 3  # see min/max requirements
+    retentionBytes: -1  # -1 means unlimited
+    retentionHours: -1  # -1 means unlimited
+  acl:
+    - team: teamsykmelding
+      application: sparenaproxy
+      access: write
+    - team: teamsykmelding
+      application: sparenajob
+      access: read
