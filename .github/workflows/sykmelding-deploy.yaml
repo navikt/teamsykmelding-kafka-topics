@@ -7,8 +7,7 @@ on:
       - 'topics/sykmelding/**'
       - '.github/workflows/sykmelding-deploy.yml'
 env:
-  TOPIC_FILES: topics/sykmelding/syfo-sendt-sykmelding.yaml,topics/sykmelding/syfo-bekreftet-sykmelding.yaml,topics/sykmelding/syfo-mottatt-sykmelding.yaml,topics/sykmelding/avvist-sykmelding.yaml,topics/sykmelding/manuell-behandling-sykmelding.yaml,topics/sykmelding/ok-sykmelding.yaml,topics/sykmelding/oppgave-journal-opprettet.yaml,topics/sykmelding/oppgave-produser-oppgave.yaml,topics/sykmelding/papir-sm-registering.yaml,topics/sykmelding/privat-arena-input.yaml,topics/sykmelding/privat-registrer-oppgave.yaml,topics/sykmelding/privat-oppgave-retry.yaml,topics/sykmelding/privat-sminfotrygd-retry.yaml,topics/sykmelding/privat-sykmelding-sak.yaml,topics/sykmelding/syfoservice-mq.yaml,topics/sykmelding/sykmelding-apprec.yaml,topics/sykmelding/sykmelding-behandlingsutfall.yaml,topics/sykmelding/sykmelding-manuell.yaml,topics/sykmelding/sykmeldingstatus-leesah.yaml,topics/sykmelding/sykmelding-historisk.yaml
-  TOPIC_DEV_FILES: topics/sykmelding/syfo-sendt-sykmelding.yaml,topics/sykmelding/syfo-bekreftet-sykmelding.yaml,topics/sykmelding/syfo-mottatt-sykmelding.yaml,topics/sykmelding/avvist-sykmelding.yaml,topics/sykmelding/manuell-behandling-sykmelding.yaml,topics/sykmelding/ok-sykmelding.yaml,topics/sykmelding/oppgave-journal-opprettet.yaml,topics/sykmelding/oppgave-produser-oppgave.yaml,topics/sykmelding/papir-sm-registering.yaml,topics/sykmelding/privat-arena-input.yaml,topics/sykmelding/privat-registrer-oppgave.yaml,topics/sykmelding/privat-oppgave-retry.yaml,topics/sykmelding/privat-sminfotrygd-retry.yaml,topics/sykmelding/privat-sykmelding-sak.yaml,topics/sykmelding/syfoservice-mq.yaml,topics/sykmelding/sykmelding-apprec.yaml,topics/sykmelding/sykmelding-behandlingsutfall.yaml,topics/sykmelding/sykmelding-manuell.yaml,topics/sykmelding/sykmeldingstatus-leesah.yaml,topics/sykmelding/sykmelding-historisk.yaml
+  TOPIC_FILES: topics/sykmelding/syfo-sendt-sykmelding.yaml,topics/sykmelding/syfo-bekreftet-sykmelding.yaml,topics/sykmelding/syfo-mottatt-sykmelding.yaml,topics/sykmelding/avvist-sykmelding.yaml,topics/sykmelding/manuell-behandling-sykmelding.yaml,topics/sykmelding/ok-sykmelding.yaml,topics/sykmelding/oppgave-journal-opprettet.yaml,topics/sykmelding/oppgave-produser-oppgave.yaml,topics/sykmelding/papir-sm-registering.yaml,topics/sykmelding/privat-arena-input.yaml,topics/sykmelding/privat-registrer-oppgave.yaml,topics/sykmelding/privat-oppgave-retry.yaml,topics/sykmelding/privat-sminfotrygd-retry.yaml,topics/sykmelding/privat-sykmelding-sak.yaml,topics/sykmelding/syfoservice-mq.yaml,topics/sykmelding/sykmelding-apprec.yaml,topics/sykmelding/sykmelding-behandlingsutfall.yaml,topics/sykmelding/sykmelding-manuell.yaml,topics/sykmelding/sykmeldingstatus-leesah.yaml,topics/sykmelding/sykmelding-historisk.yaml,topics/sykmelding/paragraf-i-kode.yaml
 jobs:
   deploy-to-dev:
     name: Deploy to dev-gcp
@@ -22,7 +21,7 @@ jobs:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: dev-gcp
           VAR: kafka-pool=nav-dev
-          RESOURCE: ${{ env.TOPIC_DEV_FILES }}
+          RESOURCE: ${{ env.TOPIC_FILES }}
   deploy-to-prod:
     name: Deploy to prod-gcp
     runs-on: ubuntu-latest
