@@ -1,0 +1,26 @@
+apiVersion: kafka.nais.io/v1
+kind: Topic
+metadata:
+  name: paragraf-i-kode
+  namespace: teamsykmelding
+  labels:
+    team: teamsykmelding
+spec:
+  pool: {{kafka-pool}}
+  config:  # optional; all fields are optional too; defaults shown
+    cleanupPolicy: delete  # delete, compact
+    minimumInSyncReplicas: 3
+    partitions: 3
+    replication: 3  # see min/max requirements
+    retentionBytes: -1  # -1 means unlimited
+    retentionHours: -1  # -1 means unlimited
+  acl:
+    - team: teamsykmelding
+      application: syfosmregler
+      access: write
+    - team: teamsykmelding
+      application: syfosmpapirregler
+      access: write
+    - team: teamsykmelding
+      application: teamsykmelding-pik
+      access: read
