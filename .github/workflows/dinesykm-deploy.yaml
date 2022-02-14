@@ -6,8 +6,7 @@ on:
     paths:
       - 'topics/dinesykmeldte/**'
 env:
-  TOPIC_FILES: topics/dinesykmeldte/dinesykmeldte-hendelser.yaml
-  TOPIC_DEV_FILES: topics/dinesykmeldte/dinesykmeldte-hendelser.yaml
+  TOPIC_FILES: topics/dinesykmeldte/dinesykmeldte-hendelser.yaml,topics/dinesykmeldte/dinesykmeldte-hendelser-v2.yaml
 jobs:
   deploy-to-dev:
     name: Deploy to dev-gcp
@@ -21,7 +20,7 @@ jobs:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: dev-gcp
           VAR: kafka-pool=nav-dev
-          RESOURCE: ${{ env.TOPIC_DEV_FILES }}
+          RESOURCE: ${{ env.TOPIC_FILES }}
   deploy-to-prod:
     name: Deploy to prod-gcp
     runs-on: ubuntu-latest
