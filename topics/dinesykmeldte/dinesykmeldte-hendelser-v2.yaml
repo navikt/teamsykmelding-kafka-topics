@@ -18,3 +18,9 @@ spec:
     - team: teamsykmelding
       application: dinesykmeldte-backend
       access: readwrite
+    - team: flex
+      application: sykepengesoknad-narmesteleder-varsler
+      access: write
+    - team: team-esyfo
+      application: esyfovarsel
+      access: write
