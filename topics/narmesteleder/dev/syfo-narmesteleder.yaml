@@ -36,3 +36,6 @@ spec:
     - team: teamsykmelding
       application: narmesteleder-arbeidsforhold
       access: write
+    - team: teamsykmelding
+      application: dinesykmeldte-backend
+      access: write
