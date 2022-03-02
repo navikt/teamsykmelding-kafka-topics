@@ -27,3 +27,6 @@ spec:
     - team: teamsykefravr
       application: isdialogmote
       access: write
+    - team: teamsykmelding
+      application: dinesykmeldte-kafka
+      access: read
