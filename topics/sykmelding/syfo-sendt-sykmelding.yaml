@@ -39,3 +39,6 @@ spec:
     - team: teamsykmelding
       application: syfoservice-data-syfosmregister
       access: readwrite
+    - team: teamsykmelding
+      application: dinesykmeldte-kafka
+      access: read

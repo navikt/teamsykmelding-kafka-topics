@@ -51,3 +51,6 @@ spec:
     - team: fager
       application: min-side-arbeidsgiver-api
       access: read
+    - team: teamsykmelding
+      application: dinesykmeldte-kafka
+      access: read
