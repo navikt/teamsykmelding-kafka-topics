@@ -42,3 +42,6 @@ spec:
     - team: teamsykmelding
       application: dinesykmeldte-kafka
       access: read
+    - team: flex
+      application: sykepengesoknad-altinn
+      access: read
