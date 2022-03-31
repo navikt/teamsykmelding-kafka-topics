@@ -31,6 +31,9 @@ spec:
       application: syfosoknad
       access: read
     - team: flex
+      application: sykepengesoknad-backend
+      access: read
+    - team: flex
       application: flex-syketilfelle
       access: read
     - team: teamsykmelding
