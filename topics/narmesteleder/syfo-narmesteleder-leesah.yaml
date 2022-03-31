@@ -30,6 +30,9 @@ spec:
     - team: flex
       application: syfosoknad
       access: read
+    - team: flex
+      application: sykepengesoknad-backend
+      access: read
     - team: teamsykmelding
       application: narmesteleder-arbeidsforhold
       access: read
