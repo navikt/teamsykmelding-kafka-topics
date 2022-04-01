@@ -19,5 +19,8 @@ spec:
       application: syfosmmottak
       access: write
     - team: teamsykmelding
+      application: syfoservice-data-syfosmregister
+      access: write
+    - team: teamsykmelding
       application: syfosmmanuell-backend
       access: read
