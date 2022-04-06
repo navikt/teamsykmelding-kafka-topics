@@ -33,3 +33,6 @@ spec:
     - team: teamsykmelding
       application: dinesykmeldte-kafka
       access: read
+    - team: team-esyfo
+      application: syfooppfolgingsplanservice
+      access: write
