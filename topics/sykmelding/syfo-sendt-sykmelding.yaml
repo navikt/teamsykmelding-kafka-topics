@@ -28,9 +28,6 @@ spec:
       application: sykmeldinger-arbeidsgiver
       access: read
     - team: flex
-      application: syfosoknad
-      access: read
-    - team: flex
       application: sykepengesoknad-backend
       access: read
     - team: flex
