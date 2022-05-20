@@ -19,9 +19,6 @@ spec:
       application: syfosmregister
       access: write
     - team: flex
-      application: syfosoknad
-      access: read
-    - team: flex
       application: sykepengesoknad-backend
       access: read
     - team: flex

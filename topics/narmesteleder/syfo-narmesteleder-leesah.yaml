@@ -28,9 +28,6 @@ spec:
       application: sykepengesoknad-ikke-sendt-altinnvarsel
       access: read
     - team: flex
-      application: syfosoknad
-      access: read
-    - team: flex
       application: sykepengesoknad-backend
       access: read
     - team: teamsykmelding
