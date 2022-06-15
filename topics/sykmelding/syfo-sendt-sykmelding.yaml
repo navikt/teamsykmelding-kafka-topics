@@ -45,3 +45,6 @@ spec:
     - team: flex
       application: sykepengesoknad-altinn
       access: read
+    - team: fager
+      application: min-side-arbeidsgiver-api
+      access: read
