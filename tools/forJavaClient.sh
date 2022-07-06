@@ -50,7 +50,7 @@ elif [[ $kafkaCluster == *"fss" ]]; then
         echo "ssl.truststore.location=$cp/nav.truststore.jks" >> $configFile
         echo "ssl.truststore.password=$truststorePassword" >> $configFile
         echo "sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$username" password="$password";" >> $configFile
-        echo "security.protocol=SASL_PLAINTEXT" >> $configFile
+        echo "security.protocol=SASL_SSL" >> $configFile
         echo "sasl.mechanism=PLAIN" >> $configFile
         echo "session.timeout.ms=30000" >> $configFile
         echo "request.timeout.ms=40000" >> $configFile
