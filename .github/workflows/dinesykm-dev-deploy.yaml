@@ -2,13 +2,12 @@ name: Deploy dinesykmeldte-topics to dev
 on:
   push:
     branches:
-      - '*'
+      - '**'
       - '!main'
     paths:
       - 'topics/dinesykmeldte/**'
 env:
-  TOPIC_FILES: topics/dinesykmeldte/dinesykmeldte-hendelser.yaml,topics/dinesykmeldte/dinesykmeldte-hendelser-v2.yaml
-
+  TOPIC_FILES: topics/dinesykmeldte/dinesykmeldte-hendelser.yaml,topics/dinesykmeldte/dinesykmeldte-hendelser-v2.yaml,topics/dinesykmeldte/dinesykmeldte-lest-status.yaml
 jobs:
   deploy-to-dev:
     name: Deploy to dev-gcp
