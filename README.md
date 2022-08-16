@@ -12,7 +12,7 @@ Slik kommer du i gang:
 4. Bruk kubernetes for å finne applikasjonsnavn (container) som du skal bruke for å hente credentials
 5. Kjør script i tools-mappen for å sette opp riktig config, f.eks. slik: 
 
-`./forKafkacat.sh <container> <gcp|fss> <appnavn>.config` 
+`./forKafkacat.sh <appnavn> <gcp|fss> <appnavn>.config` 
 
 `./forKafkacat.sh my-app gcp my-app.config`
 
