@@ -19,7 +19,7 @@ spec:
       application: syfoservice-mq-producer
       access: read
     - team: teamsykmelding
-      application: syfoservice-data-syfosmregister
+      application: macgyver
       access: write
     - team: teamsykmelding
       application: syfosmpapirmottak

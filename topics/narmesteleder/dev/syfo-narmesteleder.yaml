@@ -28,7 +28,7 @@ spec:
       application: narmesteleder
       access: readwrite
     - team: teamsykmelding
-      application: syfoservice-data-syfosmregister
+      application: macgyver
       access: write
     - team: default
       application: syfomock

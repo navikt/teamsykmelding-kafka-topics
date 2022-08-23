@@ -28,7 +28,7 @@ spec:
       application: narmesteleder
       access: readwrite
     - team: teamsykmelding
-      application: syfoservice-data-syfosmregister
+      application: smacgyver
       access: write
     - team: teamsykmelding
       application: narmesteleder-arbeidsforhold

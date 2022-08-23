@@ -22,7 +22,7 @@ spec:
       application: dinesykmeldte-backend
       access: readwrite
     - team: teamsykmelding
-      application: syfoservice-data-syfosmregister
+      application: macgyver
       access: write
     - team: teamsykmelding
       application: dinesykmeldte-kafka

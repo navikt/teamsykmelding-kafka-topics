@@ -25,5 +25,5 @@ spec:
       application: narmesteleder
       access: write
     - team: teamsykmelding
-      application: syfoservice-data-syfosmregister
+      application: macgyver
       access: write

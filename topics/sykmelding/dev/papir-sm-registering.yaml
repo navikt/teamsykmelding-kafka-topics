@@ -19,7 +19,7 @@ spec:
       application: syfosmpapirmottak
       access: write
     - team: teamsykmelding
-      application: syfoservice-data-syfosmregister
+      application: macgyver
       access: write
     - team: teamsykmelding
       application: teamsykmelding-mock-backend
