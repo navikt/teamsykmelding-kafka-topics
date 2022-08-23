@@ -27,7 +27,7 @@ spec:
       application: syfosmvarsel
       access: read
     - team: teamsykmelding
-      application: syfoservice-data-syfosmregister
+      application: macgyver
       access: readwrite
     - team: default
       application: syfoservicestrangler
