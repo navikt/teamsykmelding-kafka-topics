@@ -21,3 +21,6 @@ spec:
     - team: teamsykmelding
       application: sykmeldinger-arbeidsgiver
       access: read
+    - team: teamsykmelding
+      application: dinesykmeldte-kafka
+      access: write
