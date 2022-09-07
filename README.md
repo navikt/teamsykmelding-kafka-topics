@@ -1,6 +1,10 @@
 # teamsykmelding-kafka-topics
 Repo for Team Sykmelding sine kafkatopics, og kafkacat-oppsett.
 
+> **Note**
+> Dette er er eit repo kun for teamsykmelding om kafka topicene vi har, som ikke er av allmenn interesse. 
+> Vi har derfor valgt å holde dette repoet lukket
+
 ## Bruk av kafkacat
 Med kafkacat kan du sjekke hva som ligger på kafkatopics, og du kan sende meldinger til topicene. Vi gjør dette ved å 
 bruke credentials og config fra en pod/container som har tilgang til det vi har behov for. 
