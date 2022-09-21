@@ -29,6 +29,6 @@ spec:
     - team: teamsykmelding
       application: macgyver
       access: readwrite
-    - team: default
-      application: syfoservicestrangler
+    - team: teamsykmelding
+      application: sykmeldinger-backend-kafka
       access: read
