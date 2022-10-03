@@ -20,3 +20,6 @@ spec:
     - team: teamsykmelding
       application: macgyver
       access: readwrite
+    - team: teamsykmelding
+      application: sykmeldinger-backend-kafka
+      access: read
