@@ -25,7 +25,7 @@ if [[ $kafkaCluster == *"gcp" ]]; then
     kubectl cp $pod:$(kubectl exec $pod -c $container -- sh -c 'readlink -f $KAFKA_KEYSTORE_PATH') -c $container $cp/kafka.client.keystore.jks
     truststorePassword=$(kubectl exec $pod -c $container -- sh -c 'echo $KAFKA_CREDSTORE_PASSWORD')
     echo "bootstrap.servers="$(kubectl exec $pod -c $container -- sh -c 'echo $KAFKA_BROKERS') >> $configFile
-    echo "security.protocol=ssl" >> $configFile
+    echo "security.protocol=SSL" >> $configFile
     echo "ssl.truststore.location=$cp/kafka.client.truststore.jks" >> $configFile
     echo "ssl.keystore.location=$cp/kafka.client.keystore.jks" >> $configFile
     echo "ssl.truststore.password=$truststorePassword" >> $configFile
