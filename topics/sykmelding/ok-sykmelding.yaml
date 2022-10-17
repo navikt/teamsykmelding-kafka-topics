@@ -51,3 +51,6 @@ spec:
     - team: teamsykefravr
       application: isdialogmelding
       access: read
+    - team: teamsykmelding
+      application: sykmeldinger-backend-kafka
+      access: read
