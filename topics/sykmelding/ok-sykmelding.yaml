@@ -54,3 +54,6 @@ spec:
     - team: teamsykmelding
       application: sykmeldinger-backend-kafka
       access: read
+    - team: teamsykmelding
+      application: k143566
+      access: read
