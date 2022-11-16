@@ -28,6 +28,9 @@ spec:
       application: smregistrering-backend
       access: write
     - team: teamsykmelding
+      application: syk-dig-backend
+      access: write
+    - team: teamsykmelding
       application: syfosmregister
       access: readwrite
     - team: teamsykmelding
