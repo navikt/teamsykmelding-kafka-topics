@@ -3,6 +3,8 @@ kind: Topic
 metadata:
   name: dinesykmeldte-lest-status
   namespace: teamsykmelding
+  annotations:
+    kafka.nais.io/removeDataWhenResourceIsDeleted: "true"
   labels:
     team: teamsykmelding
 spec:
