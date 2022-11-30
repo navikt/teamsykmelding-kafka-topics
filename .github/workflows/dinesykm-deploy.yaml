@@ -6,7 +6,7 @@ on:
     paths:
       - 'topics/dinesykmeldte/**'
 env:
-  TOPIC_FILES: topics/dinesykmeldte/dinesykmeldte-hendelser.yaml,topics/dinesykmeldte/dinesykmeldte-hendelser-v2.yaml,topics/dinesykmeldte/dinesykmeldte-lest-status.yaml
+  TOPIC_FILES: topics/dinesykmeldte/dinesykmeldte-hendelser.yaml,topics/dinesykmeldte/dinesykmeldte-hendelser-v2.yaml
 jobs:
   deploy-to-dev:
     name: Deploy to dev-gcp
