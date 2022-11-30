@@ -31,6 +31,9 @@ spec:
       application: syk-dig-backend
       access: write
     - team: teamsykmelding
+      application: macgyver
+      access: write
+    - team: teamsykmelding
       application: syfosmregister
       access: readwrite
     - team: teamsykmelding
