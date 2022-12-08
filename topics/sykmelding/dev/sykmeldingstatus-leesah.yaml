@@ -35,3 +35,6 @@ spec:
     - team: teamsykmelding
       application: teamsykmelding-mock-backend
       access: write
+    - team: teamsykmelding
+      application: k143566
+      access: read
