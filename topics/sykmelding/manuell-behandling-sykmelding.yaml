@@ -42,3 +42,6 @@ spec:
     - team: teamsykmelding
       application: sykmeldinger-backend-kafka
       access: read
+    - team: disykefravar
+      application: dvh-sykefravar-airflow-kafka
+      access: read
