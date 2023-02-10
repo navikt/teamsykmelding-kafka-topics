@@ -43,7 +43,7 @@ spec:
       application: sykmeldinger-arbeidsgiver
       access: read
     - team: fager
-      application: notifikasjon-bruker-api
+      application: notifikasjon-bruker-api-writer
       access: read
     - team: teamsykmelding
       application: syfosmaltinn
