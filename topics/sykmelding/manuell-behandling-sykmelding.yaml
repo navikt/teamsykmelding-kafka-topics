@@ -45,3 +45,6 @@ spec:
     - team: disykefravar
       application: dvh-sykefravar-airflow-kafka
       access: read
+    - team: flex
+      application: sykepengesoknad-backend
+      access: read
