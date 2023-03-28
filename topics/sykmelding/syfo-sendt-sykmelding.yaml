@@ -33,6 +33,9 @@ spec:
     - team: flex
       application: flex-syketilfelle
       access: read
+    - team: flex
+      application: sykepengesoknad-altinn
+      access: read
     - team: teamsykmelding
       application: dinesykmeldte-backend
       access: read
