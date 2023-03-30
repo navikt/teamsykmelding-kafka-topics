@@ -45,9 +45,6 @@ spec:
     - team: teamsykmelding
       application: dinesykmeldte-kafka
       access: read
-    - team: flex
-      application: sykepengesoknad-altinn
-      access: read
     - team: fager
       application: min-side-arbeidsgiver-api
       access: read
