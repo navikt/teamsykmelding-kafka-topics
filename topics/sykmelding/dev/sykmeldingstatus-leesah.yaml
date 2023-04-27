@@ -38,3 +38,6 @@ spec:
     - team: teamsykmelding
       application: k143566
       access: read
+    - team: teamsykefravr
+      application: isoppfolgingstilfelle
+      access: read
