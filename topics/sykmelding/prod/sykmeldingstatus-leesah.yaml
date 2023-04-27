@@ -32,3 +32,6 @@ spec:
     - team: teamsykmelding
       application: sykmeldinger-backend-kafka
       access: read
+    - team: teamsykefravr
+      application: isoppfolgingstilfelle
+      access: read
