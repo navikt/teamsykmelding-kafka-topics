@@ -32,3 +32,6 @@ spec:
     - team: teamsykmelding
       application: k143566
       access: read
+    - team: teamsykefravr
+      application: isbehandlerdialog
+      access: read
