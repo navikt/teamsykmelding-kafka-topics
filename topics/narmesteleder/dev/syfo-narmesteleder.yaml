@@ -30,9 +30,6 @@ spec:
     - team: teamsykmelding
       application: macgyver
       access: write
-    - team: default
-      application: syfomock
-      access: write
     - team: teamsykmelding
       application: narmesteleder-arbeidsforhold
       access: write
