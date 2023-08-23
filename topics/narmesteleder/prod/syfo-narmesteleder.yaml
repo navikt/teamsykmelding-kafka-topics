@@ -21,9 +21,6 @@ spec:
     - team: teamsykmelding
       application: syfonlaltinn
       access: write
-    - team: default
-      application: syfoservicestrangler
-      access: read
     - team: teamsykmelding
       application: narmesteleder
       access: readwrite
