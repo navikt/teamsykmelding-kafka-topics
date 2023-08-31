@@ -6,7 +6,7 @@ on:
     paths:
       - 'topics/macgyver/**'
 env:
-  TOPIC_FILES: topics/macgyver/sykmelding-endringslogg.yaml,topics/macgyver/gamle-sykmeldinger-id.yaml
+  TOPIC_FILES: topics/macgyver/sykmelding-endringslogg.yaml
 jobs:
   deploy-to-dev:
     name: Deploy to dev-gcp
