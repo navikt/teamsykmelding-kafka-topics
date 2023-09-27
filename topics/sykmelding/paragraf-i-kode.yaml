@@ -13,7 +13,7 @@ spec:
     partitions: 3
     replication: 3  # see min/max requirements
     retentionBytes: -1  # -1 means unlimited
-    retentionHours: 744  # -1 means unlimited, 744 hours = 31 days
+    retentionHours: -1  # -1 means unlimited, 744 hours = 31 days
   acl:
     - team: teamsykmelding
       application: syfosmregler
