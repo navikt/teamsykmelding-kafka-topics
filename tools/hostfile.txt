@@ -1,7 +1,0 @@
-10.183.160.26 b27apvl00045.preprod.local
-10.183.32.47 b27apvl00046.preprod.local
-10.183.32.48 b27apvl00047.preprod.local
-10.184.160.37 a01apvl00145.adeo.no
-10.184.160.38 a01apvl00146.adeo.no
-10.184.32.22 a01apvl00147.adeo.no
-10.184.32.53 a01apvl00149.adeo.no
