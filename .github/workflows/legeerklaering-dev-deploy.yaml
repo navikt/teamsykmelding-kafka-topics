@@ -8,7 +8,7 @@ on:
       - 'topics/legeerklaering/**'
       - '.github/workflows/legeerklaering-dev-deploy.yml'
 env:
-  TOPIC_FILES: topics/legeerklaering/legeerklaering.yaml,topics/legeerklaering/legeerklaering-rerun.yaml
+  TOPIC_FILES: topics/legeerklaering/legeerklaering.yaml,topics/legeerklaering/legeerklaering-rerun.yaml,topics/legeerklaering/legeerklaering-temp.yaml
 jobs:
   deploy-to-dev:
     name: Deploy to dev-gcp
