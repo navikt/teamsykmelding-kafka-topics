@@ -14,8 +14,8 @@ spec:
     replication: 3  # see min/max requirements
     retentionBytes: -1  # -1 means unlimited
     retentionHours: -1  # -1 means unlimited
-    maxCompactionLagMs: 3e+9
-    minCompactionLagMs: 2.7e+9
+    maxCompactionLagMs: 3e+9 # ~ 35 days
+    minCompactionLagMs: 2.7e+9 # ~ 31 days
   acl:
     - team: teamsykmelding
       application: narmesteleder
