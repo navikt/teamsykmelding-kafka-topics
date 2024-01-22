@@ -75,3 +75,6 @@ spec:
     - team: teamsykmelding
       application: sykt
       access: read
+    - team: tbd
+      application: sparkel-tilbakedatert
+      access: read
