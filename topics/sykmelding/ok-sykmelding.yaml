@@ -72,6 +72,9 @@ spec:
     - team: flex
       application: sykepengesoknad-backend
       access: read
+    - team: flex
+      application: sykepengesoknad-arkivering-oppgave
+      access: read
     - team: teamsykmelding
       application: sykt
       access: read
