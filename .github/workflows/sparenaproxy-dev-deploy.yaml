@@ -2,7 +2,7 @@ name: Deploy sparenaproxy-topics to dev
 on:
   push:
     branches:
-      - '*'
+      - '**'
       - '!main'
     paths:
       - 'topics/sparenaproxy/**'
