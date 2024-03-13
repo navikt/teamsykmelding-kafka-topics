@@ -2,7 +2,7 @@ name: Deploy jaf-test-topics to dev
 on:
   push:
     branches:
-      - '*'
+      - '**'
       - '!main'
     paths:
       - 'topics/sykmelding/**'

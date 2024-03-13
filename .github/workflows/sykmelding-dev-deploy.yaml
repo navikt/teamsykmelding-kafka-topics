@@ -2,7 +2,7 @@ name: Deploy sykmelding-topics to dev
 on:
   push:
     branches:
-      - '*'
+      - '**'
       - '!main'
     paths:
       - 'topics/sykmelding/**'

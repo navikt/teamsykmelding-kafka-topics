@@ -2,7 +2,7 @@ name: Deploy legeerklæring-topics to dev
 on:
   push:
     branches:
-      - '*'
+      - '**'
       - '!main'
     paths:
       - 'topics/legeerklaering/**'
