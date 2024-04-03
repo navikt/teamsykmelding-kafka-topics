@@ -51,3 +51,6 @@ spec:
     - team: flex
       application: sykepengesoknad-backend
       access: read
+    - team: tsm
+      application: migrator
+      access: read

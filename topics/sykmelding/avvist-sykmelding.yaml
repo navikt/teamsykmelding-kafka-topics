@@ -33,3 +33,6 @@ spec:
     - team: teamsykmelding
       application: k143566
       access: read
+    - team: tsm
+      application: migrator
+      access: read

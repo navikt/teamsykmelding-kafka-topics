@@ -78,3 +78,6 @@ spec:
     - team: tbd
       application: sparkel-tilbakedatert
       access: read
+    - team: tsm
+      application: migrator
+      access: read
