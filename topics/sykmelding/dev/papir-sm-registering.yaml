@@ -22,7 +22,7 @@ spec:
       application: macgyver
       access: write
     - team: teamsykmelding
-      application: teamsykmelding-mock-backend
+      application: teamsykmelding-mock
       access: write
     - team: teamsykmelding
       application: smregistrering-backend

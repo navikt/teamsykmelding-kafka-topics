@@ -33,7 +33,7 @@ spec:
       application: sykmeldinger-backend-kafka
       access: read
     - team: teamsykmelding
-      application: teamsykmelding-mock-backend
+      application: teamsykmelding-mock
       access: write
     - team: teamsykmelding
       application: k143566

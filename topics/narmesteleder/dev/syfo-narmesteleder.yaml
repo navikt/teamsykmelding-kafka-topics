@@ -37,5 +37,5 @@ spec:
       application: dinesykmeldte-backend
       access: write
     - team: teamsykmelding
-      application: teamsykmelding-mock-backend
+      application: teamsykmelding-mock
       access: write
