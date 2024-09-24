@@ -81,3 +81,6 @@ spec:
     - team: tsm
       application: migrator
       access: read
+    - team: team-esyfo
+      application: meroppfolging-backend
+      access: read
