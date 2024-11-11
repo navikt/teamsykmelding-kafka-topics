@@ -16,6 +16,7 @@ spec:
     replication: 3  # see min/max requirements
     retentionBytes: -1  # -1 means unlimited
     retentionHours: -1  # -1 means unlimited
+    localRetentionHours: 336 # 336 hours = 14 days
   acl:
     - team: teamsykmelding
       application: sykmeldinger-backend
