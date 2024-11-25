@@ -84,3 +84,6 @@ spec:
     - team: team-esyfo
       application: meroppfolging-backend
       access: read
+    - team: tsm
+      application: syk-inn-api
+      access: write
