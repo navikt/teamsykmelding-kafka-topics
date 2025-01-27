@@ -45,8 +45,8 @@ spec:
     - team: teamsykmelding
       application: macgyver
       access: readwrite
-    - team: teamsykmelding
-      application: dinesykmeldte-kafka
+    - team: team-esyfo
+      application: dinesykmeldte-backend
       access: read
     - team: fager
       application: min-side-arbeidsgiver-api

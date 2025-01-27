@@ -39,3 +39,6 @@ spec:
     - team: teamsykmelding
       application: teamsykmelding-mock
       access: write
+    - team: team-esyfo
+      application: dinesykmeldte-backend
+      access: write
