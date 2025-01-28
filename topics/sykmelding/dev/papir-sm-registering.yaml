@@ -27,3 +27,6 @@ spec:
     - team: teamsykmelding
       application: smregistrering-backend
       access: read
+    - team: teamsykmelding
+      application: syk-dig-backend
+      access: read
