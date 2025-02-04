@@ -22,8 +22,8 @@ spec:
       application: syfosmpapirregler
       access: write
     - team: teamsykmelding
-      application: teamsykmelding-pik
+      application: teamsykmelding-pik-2
       access: read
     - team: teamsykmelding
-      application: teamsykmelding-pik-2
+      application: syfosmregister
       access: read
