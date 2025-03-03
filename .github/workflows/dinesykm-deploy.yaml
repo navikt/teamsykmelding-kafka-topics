@@ -4,9 +4,10 @@ on:
     branches:
       - main
     paths:
-      - 'topics/dinesykmeldte/**'
+      - '.github/workflows/dinesykm-deploy.yaml'
+      - 'topics/dinesykmeldte/dinesykmeldte-hendelser-v2.yaml'
 env:
-  TOPIC_FILES: topics/dinesykmeldte/dinesykmeldte-hendelser.yaml,topics/dinesykmeldte/dinesykmeldte-hendelser-v2.yaml
+  TOPIC_FILES: topics/dinesykmeldte/dinesykmeldte-hendelser-v2.yaml
 jobs:
   deploy-to-dev:
     name: Deploy to dev-gcp
