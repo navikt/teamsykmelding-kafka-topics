@@ -40,9 +40,6 @@ spec:
       application: sykepengesoknad-altinn
       access: read
     - team: teamsykmelding
-      application: dinesykmeldte-backend
-      access: read
-    - team: teamsykmelding
       application: macgyver
       access: readwrite
     - team: team-esyfo

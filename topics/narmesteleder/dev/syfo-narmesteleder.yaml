@@ -34,9 +34,6 @@ spec:
       application: narmesteleder-arbeidsforhold
       access: write
     - team: teamsykmelding
-      application: dinesykmeldte-backend
-      access: write
-    - team: teamsykmelding
       application: teamsykmelding-mock
       access: write
     - team: team-esyfo
