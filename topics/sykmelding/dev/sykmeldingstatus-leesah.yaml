@@ -41,3 +41,6 @@ spec:
     - team: teamsykefravr
       application: isoppfolgingstilfelle
       access: read
+    - team: flex
+      application: flex-sykmeldinger-backend
+      access: readwrite
