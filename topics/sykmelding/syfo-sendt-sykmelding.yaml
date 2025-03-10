@@ -57,3 +57,6 @@ spec:
     - team: team-esyfo
       application: lps-oppfolgingsplan-mottak
       access: read
+    - team: helsearbeidsgiver
+      application: sykepenger-im-lps-api
+      access: read
