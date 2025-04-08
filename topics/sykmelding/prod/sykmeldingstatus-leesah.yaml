@@ -5,8 +5,6 @@ metadata:
   namespace: teamsykmelding
   labels:
     team: teamsykmelding
-  annotations:
-    kafka.nais.io/removeDataWhenResourceIsDeleted: "true"
 spec:
   pool: {{kafka-pool}}
   config:  # optional; all fields are optional too; defaults shown
@@ -35,3 +33,6 @@ spec:
     - team: teamsykefravr
       application: isoppfolgingstilfelle
       access: read
+    - team: flex
+      application: flex-sykmeldinger-backend
+      access: readwrite
