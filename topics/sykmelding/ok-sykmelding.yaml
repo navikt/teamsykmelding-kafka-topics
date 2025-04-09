@@ -25,9 +25,6 @@ spec:
       application: syfosmpapirmottak
       access: write
     - team: teamsykmelding
-      application: smregistrering-backend
-      access: write
-    - team: teamsykmelding
       application: syk-dig-backend
       access: write
     - team: teamsykmelding
