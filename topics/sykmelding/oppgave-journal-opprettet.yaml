@@ -24,3 +24,6 @@ spec:
     - team: teamsykmelding
       application: syfosmoppgave-stream
       access: read
+    - team: tsm
+      application: journey
+      access: write
