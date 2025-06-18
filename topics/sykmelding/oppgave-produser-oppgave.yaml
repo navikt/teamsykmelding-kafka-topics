@@ -25,9 +25,6 @@ spec:
       application: syfosmpapirmottak
       access: write
     - team: teamsykmelding
-      application: syfosmsak
-      access: write
-    - team: teamsykmelding
       application: syfosminfotrygd
       access: write
     - team: teamsykmelding

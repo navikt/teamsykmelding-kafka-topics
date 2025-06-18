@@ -28,8 +28,5 @@ spec:
       application: syfosmregister
       access: readwrite
     - team: teamsykmelding
-      application: syfosmsak-stream
-      access: read
-    - team: teamsykmelding
       application: sykmeldinger-backend-kafka
       access: read
