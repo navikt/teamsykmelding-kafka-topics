@@ -24,9 +24,3 @@ spec:
     - team: teamsykmelding
       application: syfosminfotrygd
       access: write
-    - team: teamsykmelding
-      application: syfosmregister
-      access: readwrite
-    - team: teamsykmelding
-      application: sykmeldinger-backend-kafka
-      access: read
