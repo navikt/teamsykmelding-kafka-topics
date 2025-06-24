@@ -25,5 +25,8 @@ spec:
       application: teamsykmelding-pik-2
       access: read
     - team: teamsykmelding
+      application: teamsykmelding-pik
+      access: read
+    - team: teamsykmelding
       application: syfosmregister
       access: read
