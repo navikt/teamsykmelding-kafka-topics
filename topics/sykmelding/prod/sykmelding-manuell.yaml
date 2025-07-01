@@ -24,3 +24,6 @@ spec:
     - team: teamsykmelding
       application: syfosmmanuell-backend
       access: read
+    - team: tsm
+      application: migrator
+      access: write
