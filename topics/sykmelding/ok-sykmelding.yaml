@@ -74,7 +74,7 @@ spec:
       access: read
     - team: tsm
       application: migrator
-      access: read
+      access: readwrite
     - team: team-esyfo
       application: meroppfolging-backend
       access: read
