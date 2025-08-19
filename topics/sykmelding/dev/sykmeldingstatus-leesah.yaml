@@ -8,7 +8,7 @@ metadata:
 spec:
   pool: {{kafka-pool}}
   config:  # optional; all fields are optional too; defaults shown
-    cleanupPolicy: delete  # delete, compact
+    cleanupPolicy: compact  # delete, compact
     minimumInSyncReplicas: 3
     partitions: 10
     replication: 3  # see min/max requirements
@@ -33,9 +33,6 @@ spec:
     - team: teamsykmelding
       application: teamsykmelding-mock
       access: write
-    - team: teamsykmelding
-      application: k143566
-      access: read
     - team: teamsykefravr
       application: isoppfolgingstilfelle
       access: read
