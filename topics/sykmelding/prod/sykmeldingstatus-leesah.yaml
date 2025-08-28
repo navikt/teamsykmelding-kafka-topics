@@ -14,10 +14,9 @@ spec:
     replication: 3  # see min/max requirements
     retentionBytes: -1  # -1 means unlimited
     retentionHours: -1  # -1 means unlimited
-    minCompactionLagMs: 0
-    segmentHours: 1
-    deleteRetentionHours: 24
-    minCleanableDirtyRatioPercent: 1
+    segmentHours: 168
+    deleteRetentionHours: 168
+    minCleanableDirtyRatioPercent: 20
   acl:
     - team: teamsykmelding
       application: sykmeldinger-backend
