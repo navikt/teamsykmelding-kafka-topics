@@ -45,6 +45,9 @@ spec:
     - team: team-esyfo
       application: dinesykmeldte-backend
       access: read
+    - team: team-esyfo
+      application: esyfo-narmesteleder
+      access: read
     - team: fager
       application: min-side-arbeidsgiver-api
       access: read
