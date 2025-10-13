@@ -51,9 +51,6 @@ spec:
     - team: fager
       application: min-side-arbeidsgiver-api
       access: read
-    - team: teamsykmelding
-      application: sykmeldinger-backend-kafka
-      access: read
     - team: tsm
       application: tsm-event-source-test
       access: read
@@ -63,3 +60,5 @@ spec:
     - team: helsearbeidsgiver
       application: sykepenger-im-lps-api
       access: read
+
+

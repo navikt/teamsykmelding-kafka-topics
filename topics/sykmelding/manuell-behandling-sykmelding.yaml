@@ -22,9 +22,6 @@ spec:
       application: syfosmregister
       access: readwrite
     - team: teamsykmelding
-      application: syfosmvarsel
-      access: read
-    - team: teamsykmelding
       application: syfosmarena-stream
       access: read
     - team: teamsykmelding
