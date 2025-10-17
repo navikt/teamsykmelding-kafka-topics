@@ -21,3 +21,6 @@ spec:
     - team: teamsykmelding
       application: syfosmoppgave-stream
       access: write
+    - team: tsm
+      application: infotoast
+      access: write
