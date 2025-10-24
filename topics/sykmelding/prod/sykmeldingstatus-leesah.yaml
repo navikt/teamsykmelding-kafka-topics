@@ -23,7 +23,7 @@ spec:
       access: write
     - team: teamsykmelding
       application: syfosmregister
-      access: readwrite
+      access: read
     - team: teamsykmelding
       application: syfosmvarsel
       access: read
