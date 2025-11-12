@@ -1,0 +1,67 @@
+apiVersion: kafka.nais.io/v1
+kind: Topic
+metadata:
+  name: syfo-sendt-sykmelding
+  namespace: teamsykmelding
+  labels:
+    team: teamsykmelding
+spec:
+  pool: {{kafka-pool}}
+  config:  # optional; all fields are optional too; defaults shown
+    cleanupPolicy: compact  # delete, compact
+    minimumInSyncReplicas: 3
+    partitions: 3
+    replication: 3  # see min/max requirements
+    retentionBytes: -1  # -1 means unlimited
+    retentionHours: -1  # -1 means unlimited
+  acl:
+    - team: teamsykmelding
+      application: syfosmregister
+      access: write
+    - team: teamsykmelding
+      application: syfosmaltinn
+      access: read
+    - team: teamsykmelding
+      application: narmesteleder-varsel
+      access: read
+    - team: teamsykmelding
+      application: sykmeldinger-arbeidsgiver
+      access: read
+    - team: flex
+      application: sykepengesoknad-backend
+      access: read
+    - team: flex
+      application: sykepengesoknad-arkivering-oppgave
+      access: read
+    - team: flex
+      application: flex-syketilfelle
+      access: read
+    - team: flex
+      application: sykepengesoknad-altinn
+      access: read
+    - team: teamsykmelding
+      application: macgyver
+      access: readwrite
+    - team: team-esyfo
+      application: dinesykmeldte-backend
+      access: read
+    - team: team-esyfo
+      application: esyfo-narmesteleder
+      access: read
+    - team: fager
+      application: min-side-arbeidsgiver-api
+      access: read
+    - team: tsm
+      application: tsm-event-source-test
+      access: read
+    - team: team-esyfo
+      application: lps-oppfolgingsplan-mottak
+      access: read
+    - team: helsearbeidsgiver
+      application: sykepenger-im-lps-api
+      access: read
+    - team: team-esyfo
+      application: esyfo-kafka-manager
+      access: read
+
+
