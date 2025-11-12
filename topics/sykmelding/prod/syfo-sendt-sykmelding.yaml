@@ -51,9 +51,6 @@ spec:
     - team: fager
       application: min-side-arbeidsgiver-api
       access: read
-    - team: tsm
-      application: tsm-event-source-test
-      access: read
     - team: team-esyfo
       application: lps-oppfolgingsplan-mottak
       access: read

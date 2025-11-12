@@ -33,6 +33,3 @@ spec:
     - team: teamsykmelding
       application: sykmeldinger-backend-kafka
       access: read
-    - team: tsm
-      application: tsm-event-source-test
-      access: read
