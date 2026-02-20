@@ -21,6 +21,9 @@ spec:
     - team: flex
       application: flex-syketilfelle
       access: read
+    - team: flex
+      application: flex-sykmeldinger-backend
+      access: read
     - team: teamsykmelding
       application: macgyver
       access: readwrite
