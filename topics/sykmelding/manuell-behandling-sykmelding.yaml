@@ -27,9 +27,6 @@ spec:
     - team: teamsykmelding
       application: sparenaproxy
       access: read
-    - team: disykefravar
-      application: dvh-sykm-konsument
-      access: read
     - team: teamsykefravr
       application: isdialogmelding
       access: read
