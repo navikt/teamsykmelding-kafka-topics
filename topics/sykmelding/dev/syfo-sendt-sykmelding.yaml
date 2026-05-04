@@ -61,7 +61,8 @@ spec:
       application: sykepenger-im-lps-api
       access: read
     - team: team-esyfo
+      application: syfo-oppfolgingsplan-backend
+      access: read
+    - team: team-esyfo
       application: esyfo-kafka-manager
       access: read
-
-
