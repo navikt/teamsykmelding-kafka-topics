@@ -21,6 +21,3 @@ spec:
     - team: teamsykmelding
       application: syfosmpapirmottak
       access: write
-    - team: teamsykmelding
-      application: syk-dig-oppgavelytter
-      access: write
