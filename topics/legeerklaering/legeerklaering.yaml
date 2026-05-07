@@ -33,3 +33,6 @@ spec:
     - team: teamsykefravr
       application: isbehandlerdialog
       access: read
+    - team: tbd
+      application: sporhund
+      access: read
