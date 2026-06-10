@@ -30,3 +30,6 @@ spec:
     - team: teamsykmelding
       application: syfosmoppgave-stream
       access: read
+    - team: tsm
+      application: tsm-behandlingsdager
+      access: write
