@@ -16,9 +16,6 @@ spec:
     retentionHours: -1  # -1 means unlimited
   acl:
     - team: teamsykmelding
-      application: syfosmmottak
-      access: write
-    - team: teamsykmelding
       application: syfosmregister
       access: readwrite
     - team: teamsykmelding
@@ -44,4 +41,4 @@ spec:
       access: read
     - team: tsm
       application: migrator
-      access: readwrite
+      access: read
