@@ -56,9 +56,6 @@ spec:
     - team: team-esyfo
       application: dinesykmeldte-backend
       access: read
-    - team: teamsykmelding
-      application: sykmeldinger-backend-kafka
-      access: read
     - team: team-esyfo
       application: esyfo-narmesteleder
       access: read

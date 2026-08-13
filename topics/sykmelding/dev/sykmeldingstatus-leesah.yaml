@@ -31,9 +31,6 @@ spec:
       application: macgyver
       access: readwrite
     - team: teamsykmelding
-      application: sykmeldinger-backend-kafka
-      access: read
-    - team: teamsykmelding
       application: teamsykmelding-mock
       access: write
     - team: teamsykefravr
