@@ -27,9 +27,6 @@ spec:
     - team: teamsykmelding
       application: pale-2-register
       access: read
-    - team: teamsykmelding
-      application: k143566
-      access: read
     - team: teamsykefravr
       application: isbehandlerdialog
       access: read
