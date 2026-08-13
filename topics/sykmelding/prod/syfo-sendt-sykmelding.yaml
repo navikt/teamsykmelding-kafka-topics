@@ -19,9 +19,6 @@ spec:
       application: syfosmregister
       access: write
     - team: teamsykmelding
-      application: syfosmaltinn
-      access: read
-    - team: teamsykmelding
       application: narmesteleder-varsel
       access: read
     - team: teamsykmelding

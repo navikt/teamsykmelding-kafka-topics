@@ -6,8 +6,8 @@ on:
     paths:
       - 'topics/narmesteleder/**'
 env:
-  TOPIC_FILES: topics/narmesteleder/syfo-nl-request.yaml,topics/narmesteleder/syfo-nl-invalid.yaml,topics/narmesteleder/prod/syfo-narmesteleder.yaml,topics/narmesteleder/syfo-narmesteleder-leesah.yaml
-  TOPIC_DEV_FILES: topics/narmesteleder/syfo-nl-request.yaml,topics/narmesteleder/syfo-nl-invalid.yaml,topics/narmesteleder/dev/syfo-narmesteleder.yaml,topics/narmesteleder/syfo-narmesteleder-leesah.yaml
+  TOPIC_FILES: topics/narmesteleder/syfo-nl-request.yaml,topics/narmesteleder/prod/syfo-narmesteleder.yaml,topics/narmesteleder/syfo-narmesteleder-leesah.yaml
+  TOPIC_DEV_FILES: topics/narmesteleder/syfo-nl-request.yaml,topics/narmesteleder/dev/syfo-narmesteleder.yaml,topics/narmesteleder/syfo-narmesteleder-leesah.yaml
 jobs:
   deploy-to-dev:
     name: Deploy to dev-gcp

@@ -16,12 +16,6 @@ spec:
     retentionHours: 2190  # -1 means unlimited
   acl:
     - team: teamsykmelding
-      application: syfosmaltinn
-      access: write   # read, write, readwrite
-    - team: teamsykmelding
-      application: syfonlaltinn
-      access: read
-    - team: teamsykmelding
       application: narmesteleder
       access: write
     - team: teamsykmelding
