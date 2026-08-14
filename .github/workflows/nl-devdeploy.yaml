@@ -7,7 +7,7 @@ on:
     paths:
       - 'topics/narmesteleder/**'
 env:
-  TOPIC_FILES: topics/narmesteleder/syfo-nl-request.yaml,topics/narmesteleder/dev/syfo-narmesteleder.yaml,topics/narmesteleder/syfo-narmesteleder-leesah.yaml
+  TOPIC_FILES: topics/narmesteleder/dev/syfo-narmesteleder.yaml,topics/narmesteleder/syfo-narmesteleder-leesah.yaml
 jobs:
   deploy-to-dev:
     name: Deploy to dev-gcp
