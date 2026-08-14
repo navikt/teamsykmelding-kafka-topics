@@ -19,9 +19,6 @@ spec:
     minCleanableDirtyRatioPercent: 50
   acl:
     - team: teamsykmelding
-      application: sykmeldinger-backend
-      access: write
-    - team: teamsykmelding
       application: syfosmregister
       access: read
     - team: teamsykmelding

@@ -27,9 +27,6 @@ spec:
       application: sykepengesoknad-narmesteleder-varsler
       access: read
     - team: flex
-      application: sykepengesoknad-ikke-sendt-altinnvarsel
-      access: read
-    - team: flex
       application: sykepengesoknad-backend
       access: read
     - team: flex
