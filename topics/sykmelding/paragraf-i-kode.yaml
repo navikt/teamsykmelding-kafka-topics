@@ -24,6 +24,3 @@ spec:
     - team: teamsykmelding
       application: syfosmregister
       access: read
-    - team: tsm
-      application: syk-inn-api
-      access: write
