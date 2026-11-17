@@ -22,9 +22,6 @@ spec:
       application: macgyver
       access: write
     - team: teamsykmelding
-      application: narmesteleder-arbeidsforhold
-      access: write
-    - team: teamsykmelding
       application: teamsykmelding-mock
       access: write
     - team: team-esyfo
